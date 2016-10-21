@@ -52,6 +52,9 @@ on property:sys.boot_completed=1
     # allow CPUs to go in deeper idle state than C0
     write /sys/module/lpm_levels/parameters/sleep_disabled 0
 
+    # set io scheduler
+    setprop sys.io.scheduler "bfq"
+
 on init
     # Set permissions for persist partition
     mkdir /persist 0771 system system
